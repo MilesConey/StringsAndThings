@@ -11,10 +11,13 @@ public class StringsAndThings {
      * but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic
      * letter immediately following it. (Note: Character.isLetter(char) tests if a char is an alphabetic letter.)
      * example : countYZ("fez day"); // Should return 2
-     *           countYZ("day fez"); // Should return 2
-     *           countYZ("day fyyyz"); // Should return 2
+     * countYZ("day fez"); // Should return 2
+     * countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
+    public Integer countYZ(String input) {
+        int count = 0;
+
+
         return null;
     }
 
@@ -22,27 +25,34 @@ public class StringsAndThings {
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
      * been removed (not case sensitive). You may assume that the remove string is length 1 or more.
      * Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
-     *
+     * <p>
      * example : removeString("Hello there", "llo") // Should return "He there"
-     *           removeString("Hello there", "e") //  Should return "Hllo thr"
-     *           removeString("Hello there", "x") // Should return "Hello there"
+     * removeString("Hello there", "e") //  Should return "Hllo thr"
+     * removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        return null;
+    public String removeString(String base, String remove) {
+        return base.replace(remove, ""); // used .replace method. This allows one to replace one string (remove) with new "empty string" and then returns that to base. All instance of the values of remove have been replaced with empty string essentially removing them from base.
     }
 
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
      * to the number of appearances of "not" anywhere in the string (case sensitive)
-     *
+     * <p>
      * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false
-     *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
-     *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
+     * containsEqualNumberOfIsAndNot("This is notnot") // Should return true
+     * containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+        int is = 0;
+        int not = 0;
+        for (int i = 0; i <= input.length(); i++) {
+            if (input.startsWith("is", i)) {
+                is++;
+            } else if (input.startsWith("not", i)) {
+                not++;
+            }
+        } return is == not;
     }
-
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
@@ -63,6 +73,11 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int triple = 0;
+        for( int i = 0; i <= input.length()-1; i++) {
+            if ((input).equals(triple)){
+                triple++;
+        }
+        } return triple;
     }
 }
