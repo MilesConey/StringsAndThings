@@ -86,7 +86,7 @@ public class StringsAndThings {
     public Integer countTriple(String input){
         int counter = 0;
         for (int i = 0; i < input.length() - 1; i++) {
-            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)) { // checks the character of each index within input, to see if input == to 'g". If it is, it also checks if character at the next index is also g. If both are, it returns true
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)) { // checks if character at index [i] is equivalent to the character at index [i+1] and index[i+2]
                 counter++;
             }
         } return counter;
