@@ -1,6 +1,9 @@
 package io.zipcoder;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author tariq
  */
@@ -15,10 +18,14 @@ public class StringsAndThings {
      * countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input) {
-        int count = 0;
-
-
-        return null;
+        int count = 0; // initialized counter
+        String[] yzWords = input.split(" "); // this splits each word in the string into multiple strings (elements)
+        for (String word : yzWords) { //equivalent to saying String word = yzWords[i]
+            if (word.charAt(word.length() - 1) == 'y' || word.charAt(word.length() - 1) == 'z') { //This functions inside out, meaning that (word.length() - 1) is counting the actual length of the word and subtracting one. Then word.charAt(word.length() - 1) is taking the length and using it in word.charAt as the index, to check if the last character in word is y or z.
+                count++; // if y or z add to counter
+            }
+        }
+        return count;
     }
 
     /**
@@ -61,7 +68,11 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == 'g' && input.charAt(i + 1) == 'g') { // checks the character of each index within input, to see if input == to 'g". If it is, it also checks if character at the next index is also g. If both are, it returns true
+                return true;
+            }
+        } return false;
     }
 
 
@@ -73,11 +84,11 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        int triple = 0;
-        for( int i = 0; i <= input.length()-1; i++) {
-            if ((input).equals(triple)){
-                triple++;
-        }
-        } return triple;
+        int counter = 0;
+        for (int i = 0; i < input.length() - 1; i++) {
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)) { // checks the character of each index within input, to see if input == to 'g". If it is, it also checks if character at the next index is also g. If both are, it returns true
+                counter++;
+            }
+        } return counter;
     }
 }
